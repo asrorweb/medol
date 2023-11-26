@@ -2,6 +2,20 @@ import img from "../assets/product.png";
 import { v4 as uuidv4 } from "uuid";
 import { GlobalBtn } from "../ui";
 import { Link } from "react-router-dom";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+
+import "./styles.css";
+
+// import required modules
+import { Autoplay, FreeMode, Pagination } from "swiper/modules";
+
 const productData = [
     {
         img: img,
@@ -28,7 +42,6 @@ const productData = [
         title: "АРИТМОЛОГИЯ",
     },
 ];
-
 function HomeProducts() {
     return (
         <div className="bg-white pt-[50px] pb-[69px] max-md:pt-[41px] max-md:pb-[52px] max-sm:pt-[24px] max-sm:pb-[25px]">
@@ -37,14 +50,14 @@ function HomeProducts() {
                     ПРОДУКЦИЯ
                 </h2>
 
-                <ul className="product-list mb-[81px]">
+                <ul className="product-list text-center max-lg:hidden mb-[81px]">
                     {productData.map((data) => (
                         <li
                             key={uuidv4()}
                             className="product-list-item mx-auto pt-[17px] px-[72px] pb-[42px] rounded-[35px] opacity-90 max-md:px-[48px]"
                         >
                             <img
-                                className="px-[25px] mb-[7px]"
+                                className="px-[25px] mb-[7px] mx-auto"
                                 src={data.img}
                                 alt={data.title}
                             />
@@ -53,13 +66,58 @@ function HomeProducts() {
                             </h3>
                             <GlobalBtn
                                 text={"Посмотреть все"}
-                                className={"hover:bg-[#00C9C9]"}
+                                className={"hover:bg-[#00C9C9] mx-auto"}
                             />
                         </li>
                     ))}
                 </ul>
 
-                <Link className="text-[#0D4C93] text-[24px] flex items-center gap-[6px] mx-auto justify-center">
+                {/* slide */}
+                <Swiper
+                    slidesPerView={1}
+                    breakpoints={{
+                        // Ekran o'lchami 600px dan kichik bo'lsa
+                        768: {
+                            slidesPerView: 2, // slidesPerView ni 1 ga o'zgartiramiz
+                        },
+                        // Ekran o'lchami 800px dan kichik bo'lsa
+                        // 1024: {
+                        //     slidesPerView: 2, // slidesPerView ni 2 ga o'zgartiramiz
+                        // },
+                        // Boshqa o'lchamlar uchun kerak bo'lsa keyinroq qo'shishingiz mumkin
+                    }}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    }}
+                    spaceBetween={30}
+                    freeMode={true}
+                    modules={[FreeMode, Autoplay]}
+                    className="mySwiper max-lg:block max hidden mb-[50px] max-md:mb-[27px]"
+                >
+                    {productData.map((data) => (
+                        <SwiperSlide key={uuidv4()}>
+                            <li className="product-list-item text-center  pt-[17px] px-[72px]  pb-[42px] rounded-[35px] opacity-90 max-lg:px-[48px]">
+                                <img
+                                    className="px-[25px] mb-[7px] max-lg:px-[10px] mx-auto"
+                                    src={data.img}
+                                    alt={data.title}
+                                />
+                                <h3 className="text-[#363535] h-[73px] text-[24px] max-lg:px-[1px] tracking-[2.52px] mb-[27px] px-4">
+                                    {data.title}
+                                </h3>
+                                <GlobalBtn
+                                    text={"Посмотреть все"}
+                                    className={
+                                        "hover:bg-[#00C9C9] mx-auto max-w-full max-lg:text-[20px]  "
+                                    }
+                                />
+                            </li>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+
+                <Link className="text-[#0D4C93] text-[24px] max-md:text-[16px] flex items-center gap-[6px] mx-auto justify-center">
                     <span>Перейти в каталог нашей продукции</span>
                     <span>
                         <svg
@@ -68,6 +126,7 @@ function HomeProducts() {
                             height="30"
                             viewBox="0 0 30 30"
                             fill="none"
+                            className="max-md:w-[20px] max-md:h-[20px]"
                         >
                             <g clip-path="url(#clip0_502_67)">
                                 <path
