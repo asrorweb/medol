@@ -66,7 +66,9 @@ function HomeProducts() {
                             </h3>
                             <GlobalBtn
                                 text={"Посмотреть все"}
-                                className={"hover:bg-[#00C9C9] mx-auto"}
+                                className={
+                                    "hover:bg-[#00C9C9] mx-auto text-[20px]"
+                                }
                             />
                         </li>
                     ))}
@@ -117,7 +119,7 @@ function HomeProducts() {
                     ))}
                 </Swiper>
 
-                <Link className="text-[#0D4C93] text-[24px] max-md:text-[16px] flex items-center gap-[6px] mx-auto justify-center">
+                <Link className="text-[#0D4C93] mb-[69px] max-md:mb-[52px] max-sm:mb-[25px] text-[24px] max-md:text-[16px] flex items-center gap-[6px] mx-auto justify-center">
                     <span>Перейти в каталог нашей продукции</span>
                     <span>
                         <svg
@@ -151,6 +153,10 @@ function HomeProducts() {
                         </svg>
                     </span>
                 </Link>
+
+                <h2 className="text-[#0D4C93] text-[40px] max-sm:text-[30px] text-center font-medium">
+                    УСЛУГИ
+                </h2>
             </div>
         </div>
     );

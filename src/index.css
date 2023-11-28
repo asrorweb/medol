@@ -94,3 +94,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(413px, 1fr));
     gap: 60px;
 }
+
+.services-list {
+    background: url("./assets/product-bg.png"), lightgray 50% / cover no-repeat;
+    background-repeat: no-repeat;
+}

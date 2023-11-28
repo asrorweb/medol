@@ -1,10 +1,11 @@
-import { HomeProducts, HomeSlider } from "../components";
+import { HomeProducts, HomeServices, HomeSlider } from "../components";
 
 function Home() {
     return (
         <div>
             <HomeSlider />
             <HomeProducts />
+            <HomeServices />
         </div>
     );
 }

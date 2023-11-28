@@ -13,7 +13,7 @@ function HeroSlideChild({ data }) {
                 <p className="text-[#363535] text-[24px] leading-[40px] max-w-[680px] text-left mb-[43px] max-md:text-[20px] max-md:leading-[30px] max-md:mb-[37px]">
                     {data.desc}
                 </p>
-                <GlobalBtn text={" Подробнее"} />
+                <GlobalBtn text={" Подробнее"} className="text-[24px]" />
             </div>
             <div className="relative max-xl:hidden">
                 <img
