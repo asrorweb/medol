@@ -67,7 +67,7 @@ function HomeProducts() {
                             <GlobalBtn
                                 text={"Посмотреть все"}
                                 className={
-                                    "hover:bg-[#00C9C9] mx-auto text-[20px]"
+                                    "hover:bg-[#00C9C9] mx-auto text-[20px] h-[70px]"
                                 }
                             />
                         </li>
@@ -111,7 +111,7 @@ function HomeProducts() {
                                 <GlobalBtn
                                     text={"Посмотреть все"}
                                     className={
-                                        "hover:bg-[#00C9C9] mx-auto max-w-full max-lg:text-[20px]  "
+                                        "hover:bg-[#00C9C9] h-[70px] mx-auto max-w-full max-lg:text-[20px]  "
                                     }
                                 />
                             </li>

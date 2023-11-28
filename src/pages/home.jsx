@@ -1,4 +1,9 @@
-import { HomeProducts, HomeServices, HomeSlider } from "../components";
+import {
+    HomeCompanyInfo,
+    HomeProducts,
+    HomeServices,
+    HomeSlider,
+} from "../components";
 
 function Home() {
     return (
@@ -6,6 +11,7 @@ function Home() {
             <HomeSlider />
             <HomeProducts />
             <HomeServices />
+            <HomeCompanyInfo />
         </div>
     );
 }
